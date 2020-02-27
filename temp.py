@@ -26,6 +26,7 @@ def editOriginImg(printImg,originImg):
     #修理原图
     try:
         #注意图片颜色排列是[B,G,R]，不是[R,G,B]
+        #这里的图像颜色上下限是使用调色器取出来的，有点偷懒了
         thresh = cv2.inRange(printImg, np.array([60,76,177]), np.array([170,165,250]))
         #构建卷积核
         kernel = np.ones((5,5), np.uint8)
